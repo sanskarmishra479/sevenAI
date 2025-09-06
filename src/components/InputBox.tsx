@@ -1,8 +1,10 @@
 import { useRef, useEffect, useState } from "react";
 import { Send } from "../icons/Send";
+import { Scroll } from "../icons/Scroll";
 
 export const InputBox = () => {
   const [value, setValue] = useState("");
+  const [Model, setModel] = useState(false)
   const textareaRef = useRef(null);
 
   useEffect(() => {
@@ -26,7 +28,16 @@ export const InputBox = () => {
       />
 
       <div className="flex items-center justify-between w-full mt-2">
-        <div className="h-8 w-25 bg-gray-800 rounded-full"></div>
+        <div className="h-8 w-25 bg-gray-800 rounded-full text-white flex items-center justify-end p-2">
+          <div className="hover:text-gray-400" onClick={()=>{setModel(!Model)}}>
+            {
+              Model && <div className="h-50 w-50 bg-black absolute top-95 left-45 rounded-xl">
+              
+              </div>
+            }
+            <Scroll size="5" />
+          </div>
+        </div>
         <div className="h-8 w-8 rounded-full bg-gray-800 text-white flex items-center justify-center">
           <Send />
         </div>

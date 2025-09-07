@@ -20,7 +20,7 @@ export const Wrapper = () => {
                     <Search />
                     <Plus />
                 </div>
-               </div>
+               </div> 
         </div>
         <div className={`h-screen w-full sm:flex flex items-start justify-between p-4  ${openMenu ? "hidden" : ""}`}>
             <div className="w-full">
